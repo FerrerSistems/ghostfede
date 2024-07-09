@@ -34,19 +34,20 @@ app.get("/api/federador/:dni/:sexo", async (req, res) => {
         });
 
         if (!getToken.ok) {
-            console.log("Ocurrió un error al obtener el token ");
+            console.log("Ocurrió un error al obtener el token");
             return res.status(500).send("Error al obtener el token");
         }
 
         const { token } = await getToken.json();
 
-        const informeFederador = await fetch(https://teleconsulta.msal.gov.ar/api/pacientes/exists?documento_id=${dniId}&sexo_id=${sexoPibito}&nro_documento=${dni}, {
-            method: 'GET',
-            headers: {
-                'Authorization': Bearer ${token},
-                'Accept': 'application/json'
-            }
-        });
+        const informeFederador = await fetch(`https://teleconsulta.msal.gov.ar/api/pacientes/exists?documento_id=${dniId}&sexo_id=${sexoPibito}&nro_documento=${dni}`, {
+    method: 'GET',
+    headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/json'
+    }
+});
+
 
         if (!informeFederador.ok) {
             console.log("Ocurrió un error al realizar el informe");
@@ -64,5 +65,5 @@ app.get("/api/federador/:dni/:sexo", async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(Servidor en funcionamiento en el puerto ${PORT});
+    console.log(`Servidor en funcionamiento en el puerto ${PORT}`);
 });
