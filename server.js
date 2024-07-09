@@ -34,7 +34,7 @@ app.get("/api/federador/:dni/:sexo", async (req, res) => {
         });
 
         if (!getToken.ok) {
-            console.log("Ocurrió un error al obtener el token");
+            console.log("Ocurrió un error al obtener el token ");
             return res.status(500).send("Error al obtener el token");
         }
 
