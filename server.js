@@ -22,8 +22,8 @@ app.get("/api/federador/:dni/:sexo", async (req, res) => {
     if (sexo == "M") {sexoPibito = 110}
 
     try {
-        const emailFederador = "benitezser@gmail.com";
-        const passwordFederador = "Dante2303";
+        const emailFederador = "julietatouliet@gmail.com";
+        const passwordFederador = "Motorola54";
 
         const getToken = await fetch("https://teleconsulta.msal.gov.ar/api/getToken", {
             method: "POST",
